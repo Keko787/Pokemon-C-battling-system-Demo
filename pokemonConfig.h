@@ -5,13 +5,22 @@
 #ifndef POKEMONBLUECPP_POKEMONCONFIG_H
 #define POKEMONBLUECPP_POKEMONCONFIG_H
 /******************************************************************************************************************/
-//libraries
+///libraries
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 #include "iostream"
 #include <cstdlib>
+#include <utility>
 
-// mouse pos
+/// stage functions
+void stageStart();
+void stageSelect();
+void stageBattle(int pokemon);
+
+//testing debug
+//void UpdateHP(int Attack, int &pikachu_hp);
+
+/// mouse
 class Mouse{
 public:
     //mouse cords
@@ -20,46 +29,33 @@ public:
     int pos2X, pos2Y;
     int pos3X, pos3Y;
 
-    //loop check
-    /*bool selectOver()
-    {
-        bool selection;
-        selection = select1() || select2() || select3();
-        return selection;
-    }*/
+    ///check flags for mouse click
 
-    /*bool turnOver()
-    {
-
-    }*/
-
-    //check flags
-
-    bool start() const
+    bool selectStart() const
     {
         return pos1X > 209 && pos1X < 411 && pos1Y < 678 && pos1Y > 640;
     }
 
-    bool exit() const
+    bool selectExit() const
     {
         return pos1X > 513 && pos1X < 659 && pos1Y < 678 && pos1Y > 640;
     }
 
-    bool select1 () const
+    bool selectCharm() const
     {
         return pos2X > 927 && pos2X < 1163 && pos2Y > 113 && pos2Y < 181;
     }
-    bool select2() const
+    bool selectBulb() const
     {
         return pos2X > 927 && pos2X < 1163 && pos2Y > 279 && pos2Y < 339;
     }
 
-    bool select3() const
+    bool selectSquir() const
     {
         return pos2X > 927 && pos2X < 1163 && pos2Y > 437 && pos2Y < 499;
     }
 
-    bool goBattle() const
+    bool selectGoBattle() const
     {
         return pos2X > 952 && pos2X < 1148 && pos2Y > 638 && pos2Y < 690;
     }
@@ -85,15 +81,12 @@ public:
     }
 };
 
-
-
-// pokemon (each pokemon set the to a dex value, each dex is a class of the pokemon) (pokemon is it's own class)
-
+/// pokemon
+// (each pokemon set the to a dex value, each dex is a class of the pokemon)
 enum { Grass = 1, Water = 2, Fire = 3, Electric = 4};
 
-
+//pokemon stats and calls
 class Pokemon {
-
     std::string name;
     int type1;
     int hp ;
@@ -113,11 +106,10 @@ public:
         this->spd = sped;
         this->atk = atck;
         this->def = defe;
-        this->name = name1;
+        this->name = std::move(name1);
     }
 
     Pokemon(Pokemon *pPokemon) {}
-
     // when brought into the moves class, each function will have to be assigned to a variable
 
     int type()
@@ -125,9 +117,9 @@ public:
         return type1;
     }
 
-    int health()
+    std::string health()
     {
-        return hp;
+        return std::to_string(hp);
     }
 
     int attack()
@@ -145,7 +137,12 @@ public:
         return spd;
     }
 
-    bool isdead()
+    std::string retName()
+    {
+        return name;
+    }
+
+    /*bool isdead()
     {
         if(hpNow <= 0)
         {
@@ -155,253 +152,21 @@ public:
         {
             return false;
         }
-    }
-
-
+    }*/
 };
 
-class Moves {
 
+///moves
+class Moves {
     //int use;
     //int limit; //int totalHealth;
-
-
 public:
-
-    void tackle(Pokemon attack, Pokemon &defend)
-    {
-        //initilize stat
-        int power;
-        int negate;
-        int * currentHealth;
-        int random;
-
-
-        // assign all stats
-        currentHealth = & defend.hpNow;
-        negate = defend.defense();
-        power = attack.attack();
-
-        //move use counter and use limiter
-
-        //if(use > limit)
-
-        // accuracy check
-        random = rand() % 99;
-        if (random <= 99)
-        {
-            // power boost
-            power *= 1;
-
-
-            //final math+negate
-            *currentHealth = *currentHealth - power + negate ;
-        }
-
-    }
-
-    void vineWhip(Pokemon attack, Pokemon &defend)
-    {
-        //initilize stat
-        int power;
-        int negate;
-        int * currentHealth;
-        int random;
-
-        // assign all stats
-        currentHealth = & defend.hpNow;;
-        negate = defend.defense();
-        power = attack.attack();
-        //move use counter and use limiter
-
-        //if(use > limit)
-
-        // accuracy check
-        random = rand() % 99;
-        if (random <= 75)
-        {
-            // power boost
-            power *= 2;
-
-            // typing buff or debuff
-            if (defend.type() == Water)
-            {
-                power *= 2;
-            }
-            else if (defend.type() == Fire)
-            {
-                power /= 2;
-            }
-
-            //final math
-            *currentHealth = *currentHealth - power + negate;
-        }
-
-    }
-
-    int ember(Pokemon attack, Pokemon &defend)
-    {
-        //initilize stat
-        int power;
-        int negate;
-        int * currentHealth;
-        int random;
-
-        // assign all stats
-        currentHealth = & defend.hpNow;
-        negate = defend.defense();
-        power = attack.attack();
-        //move use counter and use limiter
-
-        //if(use > limit)
-
-        // accuracy check
-        random = rand() % 99;
-        if (random <= 75)
-        {
-            // power boost
-            power *= 2;
-
-            // typing buff or debuff
-            if (defend.type() == Grass)
-            {
-                power *= 2;
-            }
-            else if (defend.type() == Water)
-            {
-                power /= 2;
-            }
-
-            //final math
-            *currentHealth = *currentHealth - power + negate;
-        }
-
-    }
-
-    int bubbleBeam(Pokemon attack, Pokemon &defend)
-    {
-        // hour count of fixing bubblebeam: 3
-
-        //initilize stat
-        int power;
-        int negate;
-        int * currentHealth;
-        int random;
-
-        // assign all stats
-        currentHealth = & defend.hpNow;;
-        negate = defend.defense();
-        power = attack.attack();
-        //move use counter and use limiter
-
-        //if(use > limit)
-
-        // accuracy check
-        random = rand() % 99;
-        if (random <= 75)
-        {
-            // power boost
-            power *= 2;
-
-            // typing buff or debuff
-            if (defend.type() == Fire)
-            {
-                power *= 2;
-            }
-            else if (defend.type() == Grass)
-            {
-                power /= 2;
-            }
-
-            //final math
-            *currentHealth = *currentHealth - power + negate;
-        }
-
-    }
-
-
-    void electroShock(Pokemon attack, Pokemon &defend)
-    {
-        //initilize stat
-        int power;
-        int negate;
-        int * currentHealth;
-        int random;
-
-        // assign all stats
-        currentHealth = & defend.hpNow;;
-        negate = defend.defense();
-        power = attack.attack();
-        //move use counter and use limiter
-
-        //if(use > limit)
-
-        // accuracy check
-        random = rand() % 99;
-        if (random <= 75)
-        {
-            // power boost
-            power *= 2;
-
-            // typing buff or debuff
-            if (defend.type() == Water)
-            {
-                power *= 2;
-            }
-            else if (defend.type() == Grass)
-            {
-                power /= 2;
-            }
-
-            //final math
-            std::cout << power << std::endl;
-            *currentHealth = *currentHealth - power + negate;
-        }
-
-    }
+    void tackle(Pokemon attack, Pokemon &defend);
+    void vineWhip(Pokemon attack, Pokemon &defend);
+    void ember(Pokemon attack, Pokemon &defend);
+    void bubbleBeam(Pokemon attack, Pokemon &defend);
+    void electroShock(Pokemon attack, Pokemon &defend);
 };
-
-
-/*void cpuTurn(Pokemon & cpu, Pokemon & player, sf::Text text2, sf::Text hp_player)
-{
-    Moves command;
-    bool oppSelected = false;
-    int random;
-
-
-
-
-    //cpu descision maker
-    random = rand() % 99;
-    if (random > 1)
-    {
-        //move
-        command.tackle(cpu, player);
-
-        //text
-        hp_player.setString(std::to_string(player.hpNow));
-        text2.setString("Pokemon Executed"
-                        "\nTackle...");
-    }
-        //goes for other one
-    else
-    {
-        //move
-        command.electroShock(cpu, player);
-
-        //text
-        hp_player.setString(std::to_string(player.hpNow));
-        text2.setString("Pokemon Executed"
-                        "\nElementary attack...");
-
-    }
-
-}*/
-
-
-//void charbattle
-
-//class battle{};
 
 
 /****************************************************************************************************************/

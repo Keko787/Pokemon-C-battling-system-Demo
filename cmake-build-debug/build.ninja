@@ -49,9 +49,33 @@ cmake_ninja_workdir = C$:/Users/kskos/CLionProjects/PokemonBlueCpp/cmake-build-d
 
 build cmake_object_order_depends_target_PokemonBlueCpp: phony || CMakeFiles/PokemonBlueCpp.dir
 
-build CMakeFiles/PokemonBlueCpp.dir/PokemonProject3.cpp.obj: CXX_COMPILER__PokemonBlueCpp_Debug C$:/Users/kskos/CLionProjects/PokemonBlueCpp/PokemonProject3.cpp || cmake_object_order_depends_target_PokemonBlueCpp
+build CMakeFiles/PokemonBlueCpp.dir/start_window.cpp.obj: CXX_COMPILER__PokemonBlueCpp_Debug C$:/Users/kskos/CLionProjects/PokemonBlueCpp/start_window.cpp || cmake_object_order_depends_target_PokemonBlueCpp
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\PokemonBlueCpp.dir\PokemonProject3.cpp.obj.d
+  DEP_FILE = CMakeFiles\PokemonBlueCpp.dir\start_window.cpp.obj.d
+  FLAGS = -g -std=gnu++1z
+  INCLUDES = -IC:/SFML-2.5.1/include -isystem /SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\PokemonBlueCpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\PokemonBlueCpp.dir
+
+build CMakeFiles/PokemonBlueCpp.dir/battle_window.cpp.obj: CXX_COMPILER__PokemonBlueCpp_Debug C$:/Users/kskos/CLionProjects/PokemonBlueCpp/battle_window.cpp || cmake_object_order_depends_target_PokemonBlueCpp
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\PokemonBlueCpp.dir\battle_window.cpp.obj.d
+  FLAGS = -g -std=gnu++1z
+  INCLUDES = -IC:/SFML-2.5.1/include -isystem /SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\PokemonBlueCpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\PokemonBlueCpp.dir
+
+build CMakeFiles/PokemonBlueCpp.dir/pokemon_moves.cpp.obj: CXX_COMPILER__PokemonBlueCpp_Debug C$:/Users/kskos/CLionProjects/PokemonBlueCpp/pokemon_moves.cpp || cmake_object_order_depends_target_PokemonBlueCpp
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\PokemonBlueCpp.dir\pokemon_moves.cpp.obj.d
+  FLAGS = -g -std=gnu++1z
+  INCLUDES = -IC:/SFML-2.5.1/include -isystem /SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\PokemonBlueCpp.dir
+  OBJECT_FILE_DIR = CMakeFiles\PokemonBlueCpp.dir
+
+build CMakeFiles/PokemonBlueCpp.dir/select_window.cpp.obj: CXX_COMPILER__PokemonBlueCpp_Debug C$:/Users/kskos/CLionProjects/PokemonBlueCpp/select_window.cpp || cmake_object_order_depends_target_PokemonBlueCpp
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\PokemonBlueCpp.dir\select_window.cpp.obj.d
   FLAGS = -g -std=gnu++1z
   INCLUDES = -IC:/SFML-2.5.1/include -isystem /SFML-2.5.1/include
   OBJECT_DIR = CMakeFiles\PokemonBlueCpp.dir
@@ -65,7 +89,7 @@ build CMakeFiles/PokemonBlueCpp.dir/PokemonProject3.cpp.obj: CXX_COMPILER__Pokem
 #############################################
 # Link the executable PokemonBlueCpp.exe
 
-build PokemonBlueCpp.exe: CXX_EXECUTABLE_LINKER__PokemonBlueCpp_Debug CMakeFiles/PokemonBlueCpp.dir/PokemonProject3.cpp.obj | /SFML-2.5.1/lib/libsfml-graphics-s-d.a /SFML-2.5.1/lib/libsfml-window-s-d.a /SFML-2.5.1/lib/libsfml-system-s-d.a /SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a /SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
+build PokemonBlueCpp.exe: CXX_EXECUTABLE_LINKER__PokemonBlueCpp_Debug CMakeFiles/PokemonBlueCpp.dir/start_window.cpp.obj CMakeFiles/PokemonBlueCpp.dir/battle_window.cpp.obj CMakeFiles/PokemonBlueCpp.dir/pokemon_moves.cpp.obj CMakeFiles/PokemonBlueCpp.dir/select_window.cpp.obj | /SFML-2.5.1/lib/libsfml-graphics-s-d.a /SFML-2.5.1/lib/libsfml-window-s-d.a /SFML-2.5.1/lib/libsfml-system-s-d.a /SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a /SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
   FLAGS = -g
   LINK_LIBRARIES = /SFML-2.5.1/lib/libsfml-graphics-s-d.a  /SFML-2.5.1/lib/libsfml-window-s-d.a  /SFML-2.5.1/lib/libsfml-system-s-d.a  /SFML-2.5.1/lib/libsfml-audio-s-d.a  -lgdi32  -lOpenGL32  C:/SFML-2.5.1/lib/libfreetype.a  /SFML-2.5.1/lib/libsfml-system-s-d.a  -lwinmm  C:/SFML-2.5.1/lib/libopenal32.a  C:/SFML-2.5.1/lib/libvorbisfile.a  C:/SFML-2.5.1/lib/libvorbisenc.a  C:/SFML-2.5.1/lib/libvorbis.a  C:/SFML-2.5.1/lib/libogg.a  C:/SFML-2.5.1/lib/libFLAC.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/SFML-2.5.1/lib

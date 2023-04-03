@@ -9,5 +9,5 @@ include_directories(${SFML_INCLUDE_DIR})
 link_directories(${SFML_LIBRARY_DIR})
 find_package(SFML 2.5.1 COMPONENTS system window graphics
         network audio)
-add_executable(PokemonBlueCpp pokemonProject3.cpp)
+add_executable(PokemonBlueCpp start_window.cpp battle_window.cpp pokemon_moves.cpp select_window.cpp)
 target_link_libraries(PokemonBlueCpp sfml-graphics sfml-window sfml-system sfml-audio)
