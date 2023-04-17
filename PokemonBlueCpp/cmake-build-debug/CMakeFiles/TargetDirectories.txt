@@ -1,3 +1,0 @@
-C:/Users/kskos/CLionProjects/PokemonBlueCpp/cmake-build-debug/CMakeFiles/PokemonBlueCpp.dir
-C:/Users/kskos/CLionProjects/PokemonBlueCpp/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/kskos/CLionProjects/PokemonBlueCpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
