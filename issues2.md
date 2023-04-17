@@ -7,3 +7,6 @@ and a bug with the oppenent ai when the tackle move is done which was discovered
 4. Fixed the tackle move so that the opponent ai performs their move as well. This was discovered to be an game exploit that gave the user an advantage which fulfulls the 14th criterion. -Commit 8.
 
 -Commit 8. https://github.com/Keko787/Pokemon-C-battling-system/commit/2bd6b72792d86e61e3cefc8678ee1d1cff2c4163
+
+- Project SWOT and risk matrix.  https://github.com/Keko787/Pokemon-C-battling-system/issues/3
+- Project security checklist.  https://github.com/Keko787/Pokemon-C-battling-system/issues/4
