@@ -15,10 +15,4 @@ Only the newest version is being patched with security updates. The rest are not
 
 ## Reporting a Vulnerability
 
-If a vulnerability is found, please directly message the author through private message. Expect
-
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+If a vulnerability is found, please directly message the author through private message. Expect an ETA up to 1 week for a response or update. If a vulnerability is identified, expect an update with an ETA up to a month. If the vulnerability is not idenified and rejected, please elaborate the vulnerability via PM and please send in the vulnerability again. 
