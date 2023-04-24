@@ -22,18 +22,19 @@ void Moves::tackle(Pokemon attack, Pokemon &defend)
     //initialize stat
     int power;
     int negate;
-    int *currentHealth;
-    int random;
 
     // assign all stats
-    currentHealth = & defend.hpNow;  // only stat that isn't being copied but transferred is the defends current health
+    // only stat that isn't being copied but transferred is the defends current health
     negate = defend.defense();
     power = attack.attack();
 
     //*move use counter and use limiter*
 
-    // accuracy check
-    random = rand() % 99;
+    //accuracy check
+    // Providing a seed value
+    srand((unsigned) time(nullptr));
+    // Get a random number
+    int random = rand() % 99;
     if (random <= 99) // guaranteed
     {
         // power boost
@@ -42,7 +43,7 @@ void Moves::tackle(Pokemon attack, Pokemon &defend)
         // no type buff/de-buff
 
         //final math
-        *currentHealth = *currentHealth - power + negate ;
+        defend.hpNow = defend.hpNow - power + negate;
     }
 }
 
@@ -61,19 +62,19 @@ void Moves::vineWhip(Pokemon attack, Pokemon &defend)
     //initialize stat
     int power;
     int negate;
-    int *currentHealth;
-    int random;
 
     // assign all stats
-    currentHealth = &defend.hpNow;;
     negate = defend.defense();
     power = attack.attack();
 
     //*move use counter and use limiter*
     //*if(use > limit)*
 
-    // accuracy check
-    random = rand() % 99;
+    //accuracy check
+    // Providing a seed value
+    srand((unsigned) time(nullptr));
+    // Get a random number
+    int random = rand() % 99;
     if (random <= 99)  // value: chances of hitting
     {
         // power boost
@@ -89,7 +90,7 @@ void Moves::vineWhip(Pokemon attack, Pokemon &defend)
 
         //final math // the function doesn't return the current health because it is already been changed
         // since it's attached to ptr
-        *currentHealth = *currentHealth - power + negate;
+        defend.hpNow = defend.hpNow - power + negate;
     }
 
     // *else {*
@@ -110,19 +111,19 @@ void Moves::ember(Pokemon attack, Pokemon &defend)
     //initialize stat
     int power;
     int negate;
-    int *currentHealth;
-    int random;
 
     // assign all stats
-    currentHealth = & defend.hpNow;
     negate = defend.defense();
     power = attack.attack();
 
     //*move use counter and use limiter*
     //*if(use > limit)*
 
-    // accuracy check
-    random = rand() % 99;
+    //accuracy check
+    // Providing a seed value
+    srand((unsigned) time(nullptr));
+    // Get a random number
+    int random = rand() % 99;
     if (random <= 99)  // value: chances of hitting
     {
         // power boost
@@ -140,7 +141,7 @@ void Moves::ember(Pokemon attack, Pokemon &defend)
 
         // final math // the function doesn't return the current health because it is already been changed
         // since It's attached to ptr
-        *currentHealth = *currentHealth - power + negate;
+        defend.hpNow = defend.hpNow - power + negate;
     }
 }
 
@@ -157,19 +158,19 @@ void Moves::bubbleBeam(Pokemon attack, Pokemon &defend)
     //initialize stat
     int power;
     int negate;
-    int *currentHealth;
-    int random;
 
     // assign all stats
-    currentHealth = & defend.hpNow;;
     negate = defend.defense();
     power = attack.attack();
 
     //*move use counter and use limiter*
     //*if(use > limit)*
 
-    // accuracy check
-    random = rand() % 99;
+    //accuracy check
+    // Providing a seed value
+    srand((unsigned) time(nullptr));
+    // Get a random number
+    int random = rand() % 99;
     if (random <= 99)  // value: chances of hitting
     {
         // power boost
@@ -187,10 +188,9 @@ void Moves::bubbleBeam(Pokemon attack, Pokemon &defend)
 
         //final math // the function doesn't return the current health because it is already been changed
         // since It's attached to ptr
-        *currentHealth = *currentHealth - power + negate;
+        defend.hpNow = defend.hpNow - power + negate;
     }
 }
-
 
 void Moves::electroShock(Pokemon attack, Pokemon &defend)
 {
@@ -205,19 +205,18 @@ void Moves::electroShock(Pokemon attack, Pokemon &defend)
     //initialize stat
     int power;
     int negate;
-    int *currentHealth;
-    int random;
 
-    // assign all stats
-    currentHealth = &defend.hpNow;;
     negate = defend.defense();
     power = attack.attack();
 
     //*move use counter and use limiter*
     //*if(use > limit)*
 
-    // accuracy check
-    random = rand() % 99;
+    //accuracy check
+    // Providing a seed value
+    srand((unsigned) time(nullptr));
+    // Get a random number
+    int random = rand() % 99;
     if (random <= 99) // value: chances of hitting
     {
         // power boost
@@ -235,7 +234,7 @@ void Moves::electroShock(Pokemon attack, Pokemon &defend)
 
         //final math // the function doesn't return the current health because it is already been changed
         // since It's attached to ptr
-        *currentHealth = *currentHealth - power + negate;
+        defend.hpNow = defend.hpNow - power + negate;
     }
 }
 

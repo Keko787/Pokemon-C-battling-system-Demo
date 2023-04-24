@@ -32,8 +32,7 @@ void stageBattle(int pokemon);
 /// mouse
 class Mouse{
 public:
-    //*mouse cords*
-    //*int dll = 0;*
+    ///mouse cords for each window/stage
     int pos1X, pos1Y;
     int pos2X, pos2Y;
     int pos3X, pos3Y;
@@ -89,7 +88,7 @@ public:
     }
 };
 
-/// pokemon
+/// Pokemon
 
 // (each Pokémon set the to a dex value, each dex is a class of the Pokémon)
 enum { Grass = 1, Water = 2, Fire = 3, Electric = 4};
@@ -176,7 +175,6 @@ public:
     void bubbleBeam(Pokemon attack, Pokemon &defend);
     void electroShock(Pokemon attack, Pokemon &defend);
 };
-
 
 /****************************************************************************************************************/
 #endif //POKEMONBLUECPP_POKEMONCONFIG_H
