@@ -24,7 +24,7 @@ This console-based Pokemon game allows players to:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Keko787/Pokemon-C-battling-system-Demo.git
-   cd Pokemon-C-battling-system-Demo
+   cd Pokemon-C-battling-system-Demo/PokemonBlueCpp
 
 # Code Structure
 - main.cpp: Main game logic and entry point.
