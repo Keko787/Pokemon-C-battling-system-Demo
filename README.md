@@ -23,8 +23,8 @@ This console-based Pokemon game allows players to:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/pokemon-console-game.git
-   cd pokemon-console-game
+   git clone https://github.com/Keko787/Pokemon-C-battling-system-Demo.git
+   cd Pokemon-C-battling-system-Demo
 
 # Code Structure
 - main.cpp: Main game logic and entry point.
