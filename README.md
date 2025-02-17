@@ -1,11 +1,14 @@
 # PokemonBlueCppVersion
 # Pokemon Console Game
+![Poke_Menu_WIP (1)](https://github.com/user-attachments/assets/5aff62b7-f555-4c29-b125-02f1a2068b1c)
+
 
 Welcome to the Pokemon Console Game repository! This project is a text-based Pokemon game implemented in C++. Embark on an adventure, catch Pokemon, and become a Pokemon Master!
 
 ## About the Game
 
 This console-based Pokemon game allows players to:
+
 
 - Catch Pokemon in the wild.
 - Battle other trainers and wild Pokemon.
